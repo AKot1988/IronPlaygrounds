@@ -197,7 +197,7 @@ IronCard.prototype.changeFavoritesStatus = async function (e) {
 
 IronCard.prototype.checkFavoritesStatus = async function () {
   const cardDocRef = doc(playgroundCollectionRef, this.data.id);
-  const userFavoritesRef = doc(favoritesCollectionRef, auth.lastNotifiedUid);
+  const userFavoritesRef = doc(favoritesCollectionRef, Router.user.uid);
   const userFavDocSnapshot = await getDoc(userFavoritesRef);
   const userFavDocRefDataArray = userFavDocSnapshot.data().list;
   console.log(cardDocRef);
