@@ -1,0 +1,58 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.modal__wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content-holder {
+  @include flex(center, center, column);
+  gap: 10px;
+  max-width: 300px;
+  background-color: var(--basic-decore-color);
+  padding: 30px 15px;
+  border-radius: 10px;
+}
+
+.modal__header {
+  @include font(
+    var(--headers-font-family),
+    var(--headers-font-weight),
+    var(--main-font-size),
+    16px
+  );
+  color: var(--basic-text-color);
+  align-items: center;
+}
+
+.modal__approve-button,
+.modal__decline-button {
+  @include font(
+    var(--main-font-family),
+    var(--main-font-weight),
+    var(--main-font-size),
+    20px
+  );
+  margin: 5px;
+  width: 50px;
+  color: var(--basic-text-color);
+  padding: 3px;
+  border-radius: 5px;
+  border: 2px solid var(--basic-text-color);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--basic-background-blur-color);
+  }
+}

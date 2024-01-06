@@ -1,0 +1,76 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.iron-card {
+  @include flex(start, space-between, column);
+  gap: var(--gap-main);
+  
+  &__photo {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+  }
+
+  &__title,
+  &__description,
+  &__rate {
+    @include font(
+      var(--main-font-family),
+      var(--headers-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    gap: var(--gap-main);
+  }
+  &__description {
+    height: 200px;
+  }
+
+  &__pointsContainer {
+    @include flex(start, center, row);
+    gap: 10px;
+  }
+
+  &__favSVG {
+    width: 20px;
+    height: 20px;
+    fill: var(--basic-text-color);
+  }
+
+  // &__locationSVG {
+  //   width: 20px;
+  //   height: 20px;
+  //   fill: var(--basic-text-color);
+  // }
+
+  &__updateCardButton,
+  &__deleteCardButton {
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    margin: 5px;
+    min-width: 100px;
+    color: var(--basic-text-color);
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid var(--basic-text-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--basic-background-blur-color);
+    }
+  }
+}
+
+.iron-card__ankerLinkLocation svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--basic-text-color);
+}

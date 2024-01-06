@@ -1,0 +1,69 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+.header {
+  width: 100vw;
+  height: var(--header-height);
+  background-color: var(--basic-decore-color);
+
+  &__wrapper {
+    @include flex(center, space-between, row);
+    max-width: 1280px;
+    height: var(--header-height);
+    margin: 0px auto;
+    padding: 0px var(--padding-main);
+    flex-wrap: wrap;
+    gap: var(--gap-main);
+    background-color: var(--basic-decore-color);
+  }
+
+  &__menu__wrapper {
+    @include flex(center, center, row);
+  }
+
+  &__home,
+  &__map,
+  &__my-places,
+  &__button {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      // position: relative;
+      // z-index: 2;
+      // box-shadow: 10px 15px 5px rgb(186, 186, 186);
+      scale: 1.15;
+    }
+  }
+
+  &__home,
+  &__map,
+  &__my-places,
+  &__user-photo,
+  &__button {
+    width: 100px;
+    @include flex(center, center, row);
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    cursor: pointer;
+
+    height: 20px;
+  }
+
+  &__user-photo {
+    margin: 0 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+  }
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+  fill: var(--secondary-decore-color);
+}

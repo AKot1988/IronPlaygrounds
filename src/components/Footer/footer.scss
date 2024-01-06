@@ -1,0 +1,42 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.footer {
+  width: 100%;
+  height: var(--footer-height);
+  background-color: var(--basic-decore-color);
+
+  &__wrapper {
+    @include flex(center, center, column);
+    max-width: 1280px;
+    height: var(--footer-height);
+    margin: 0px auto;
+    padding: 0px var(--padding-main);
+    flex-wrap: wrap;
+    gap: var(--gap-main);
+    background-color: var(--basic-decore-color);
+  }
+
+  &__links__container {
+    @include flex(center, center, row);
+    gap: 10px;
+    // align-self: flex-end;
+  }
+
+  &__links__container svg {
+    width: 20px;
+    height: auto;
+    fill: var(--secondary-decore-color);
+  }
+
+  &__copyrightMessage {
+    @include font(
+      var(--main-font-family),
+      var(--secondary-font-weight),
+      var(--small-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+  }
+}

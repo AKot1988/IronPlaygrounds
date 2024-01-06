@@ -1,0 +1,125 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.modal__form__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--basic-background-blur-color);
+  @include flex(center, center, column);
+}
+
+.newCard__form {
+  position: relative;
+  @include flex(center, center, column);
+  gap: 10px;
+  max-width: 300px;
+  background-color: var(--basic-decore-color);
+  padding: 30px 15px;
+  border-radius: 10px;
+
+  &__header {
+    @include font(
+      var(--headers-font-family),
+      var(--headers-font-weight),
+      var(--main-font-size),
+      16px
+    );
+    color: var(--basic-text-color);
+    align-items: center;
+  }
+
+  &__input,
+  &__description__input,
+  &__longitude,
+  &__latitude,
+  &__title__input,
+  &__photo__input,
+  &__type__select,
+  &__rate__select,
+  &__type__select option,
+  &__rate__select option {
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    padding: 3px;
+    border: 2px solid var(--basic-text-color);
+    border-radius: 10px;
+
+    // color: var(--basic-text-color);
+    // border: none;
+    // padding: 5px;
+    width: 90%;
+    height: 30px;
+  }
+
+  &__description__input {
+    height: 200px;
+  }
+
+  &__submit__button {
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid var(--basic-text-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--basic-background-blur-color);
+    }
+  }
+
+  &__coordinates__longError {
+    color: rgba(255, 0, 0, 0.9);
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--small-font-size),
+      20px
+    );
+    position: absolute;
+    top: 135px;
+    left: 30px;
+  }
+
+  &__coordinates__latError {
+    color: rgba(255, 0, 0, 0.9);
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--small-font-size),
+      20px
+    );
+    position: absolute;
+    top: 185px;
+    left: 30px;
+  }
+}
+
+#form__mapWrapper__container {
+  position: relative;
+  width: 90%;
+  height: 200px;
+  background-color: var(--basic-background-blur-color);
+  @include flex(center, center, column);
+  border: 2px solid var(--basic-text-color);
+  border-radius: 10px;
+}
+
+.map-page__marker svg {
+  // fill: red;
+  fill: var(--basic-text-color);
+  width: 30px;
+  height: 30px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "iron-playgrounds",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.69.7",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "firebase": "^10.3.1",
+    "mapbox-gl": "^2.15.0"
+  }
+}

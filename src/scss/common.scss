@@ -1,0 +1,36 @@
+:root {
+  // --------------------------colors-------------------------------
+  --basic-decore-color: #c0c0c0;
+  --secondary-decore-color: #777777;
+  --third-decore-color: #e5e4e2;
+
+  --basic-text-color: #565460;
+  --secondary-text-color: #326876;
+
+  --basic-background-blur-color: #e5e4e2;
+
+  --shadow-color: #bababa;
+
+  //---------------------------sizes----------------------------------
+  --headers1-font-size: 32px;
+  --headers2-font-size: 25px;
+  --headers3-font-size: 20px;
+  --main-font-size: 16px;
+  --small-font-size: 12px;
+
+  --padding-main: 50px;
+  --gap-main: 20px;
+
+  //---------------------------margins----------------------------------
+
+  --header-height: 100px;
+  --footer-height: 100px;
+
+  //---------------------------fonts----------------------------------
+  --headers-font-family: 'Ruslan Display', system-ui, cursive;
+  --main-font-family: 'Play', system-ui, cursive;
+
+  --main-font-weight: 400;
+  --headers-font-weight: 600;
+  --secondary-font-weight: 500;
+}

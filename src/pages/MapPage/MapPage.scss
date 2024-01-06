@@ -1,0 +1,64 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.mapPage {
+  @include flex(center, center, column);
+  max-width: 1280px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+
+  &__mapWrapper {
+    width: 90%;
+    height: 600px;
+    margin-top: 30px;
+    background-color: var(--basic-background-blur-color);
+    box-shadow: 15px 15px 5px var(--shadow-color);
+    border-radius: 15px;
+  }
+
+  &__map {
+    width: 100%;
+    height: 600px;
+
+    border-radius: 15px;
+  }
+
+  &__filter-container {
+    @include flex(start, center, column);
+  }
+
+  &__filter-option1-container,
+  &__filter-option2-container {
+    @include flex(center, center, row);
+  }
+
+  &__filter-option1,
+  &__filter-option2 {
+    margin-left: 0px;
+  }
+}
+
+h2,
+h4 {
+  @include font(
+    var(--main-font-family),
+    var(--main-font-weight),
+    var(--headers3-font-size),
+    30px
+  );
+  @include flex(center, center, row);
+  height: 25px;
+  color: var(--basic-text-color);
+}
+
+.marker {
+  &-currentUser .logo {
+    fill: var(--secondary-decore-color);
+  }
+
+  &-stranger .logo {
+    fill: var(--secondary-text-color);
+  }
+}

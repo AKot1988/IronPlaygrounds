@@ -1,0 +1,108 @@
+@import '@/scss/mixins.scss';
+@import '@/scss/common.scss';
+@import '@/scss/fonts.scss';
+
+.places {
+  width: 100vw;
+  height: 60px;
+  height: calc(100vh - var(--footer-height) - var(--header-height));
+  overflow-y: scroll;
+
+  &__options__wrapper {
+    max-width: 1280px;
+    margin: 0px auto;
+    @include flex(start, center, row);
+    gap: var(--gap-main);
+    padding: 20px 0;
+  }
+
+  &__filterOptions,
+  &__filterOptions option {
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  &__add__button {
+    @include font(
+      var(--main-font-family),
+      var(--main-font-weight),
+      var(--main-font-size),
+      20px
+    );
+    color: var(--basic-text-color);
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid var(--basic-text-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--basic-background-blur-color);
+    }
+  }
+
+  &__cards__wrapper {
+    max-width: 1280px;
+    min-height: 150px;
+    margin: 0px auto;
+    @include flex(start, center, row);
+    flex-wrap: wrap;
+    gap: var(--gap-main);
+    margin-bottom: 50px;
+  }
+
+  .iron-card {
+    padding: 10px;
+    @include flex(start, space-between, column);
+    gap: var(--gap-main);
+    max-width: 150px;
+    height: 450px;
+    background-color: var(--basic-background-blur-color);
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px var(--shadow-color);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      position: relative;
+      z-index: 2;
+      box-shadow: 10px 15px 5px var(--shadow-color);
+      scale: 1.05;
+    }
+
+    &__photo {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    &__title,
+    &__rate {
+      @include font(
+        var(--main-font-family),
+        var(--main-font-weight),
+        var(--main-font-size),
+        20px
+      );
+      color: var(--basic-text-color);
+      gap: var(--gap-main);
+    }
+    &__description {
+      height: 200px;
+      overflow-y: hidden;
+      @include font(
+        var(--main-font-family),
+        var(--main-font-weight),
+        var(--small-font-size),
+        20px
+      );
+      color: var(--basic-text-color);
+      gap: var(--gap-main);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+@import './common.scss';
+
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--secondary-decore-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--shadow-color);
+  outline: 1px solid var(--secondary-text-color);
+}
+
+* {
+  font-family: var(--headers-font-family);
+  animation: global;
+  animation-duration: 0.5s;
+}
+
+@keyframes global {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 0.45em;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--basic-text-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-text-color);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
+
+#pageContent {
+  height: calc(100vh - var(--footer-height) - var(--header-height));
+  // background-image: url('@/assets/images/content_img/20230428_151154.JPG');
+  background-size: cover;
+}
