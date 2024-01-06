@@ -97,6 +97,32 @@ IronCard.prototype.render = async function (parent, isEditable = false) {
   parent.append(this.elements.self);
 };
 
+IronCard.prototype.renderHomePage = async function (parent) {
+  this.parent = parent;
+  this.elements.self.classList.add('iron-card');
+  this.elements.title.classList.add('iron-card__title');
+  this.elements.description.classList.add('iron-card__description');
+  this.elements.photo.classList.add('iron-card__photo');
+  this.elements.author.classList.add('iron-card__author');
+  this.elements.pointsContainer.classList.add('iron-card__pointsContainer');
+  this.elements.rate.classList.add('iron-card__rate');
+
+  this.elements.title.innerText = this.data.title;
+  this.elements.description.innerText = this.data.description;
+  this.elements.photo.src = this.data.photo;
+  this.elements.rate.innerText = `Рейтинг: ${this.data.rate}`;
+
+  this.elements.pointsContainer.append(this.elements.rate);
+
+  this.elements.self.append(
+    this.elements.photo,
+    this.elements.title,
+    this.elements.description,
+    this.elements.pointsContainer
+  );
+  parent.append(this.elements.self);
+};
+
 IronCard.prototype.remove = function (parent) {
   this.elements.self.remove();
 };

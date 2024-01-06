@@ -1,4 +1,4 @@
-import { getAllPlaygrounds } from '@/firebase';
+import { getAllPlaygrounds } from '@/firebase/API.js';
 import IronCard from '@/components/IronCard/IronCard.js';
 
 import '@/scss/main.scss';
@@ -56,7 +56,7 @@ Home.prototype.render = async function (parent) {
 Home.prototype.handleCarousel = function (collection) {
   const firstIronCard = new IronCard(collection[this.currentSlideIndex]);
 
-  firstIronCard.render(this.elements.carouselWrapper);
+  firstIronCard.renderHomePage(this.elements.carouselWrapper);
 
   this.prevSlide = firstIronCard;
   this.currentSlideIndex++;
@@ -75,7 +75,7 @@ Home.prototype.handleCarousel = function (collection) {
 
       const newIronCard = new IronCard(collection[this.currentSlideIndex]);
 
-      newIronCard.render(this.elements.carouselWrapper);
+      newIronCard.renderHomePage(this.elements.carouselWrapper);
       this.currentSlideIndex++;
       this.prevSlide = newIronCard;
     }, 3000);
