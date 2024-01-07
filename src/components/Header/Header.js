@@ -9,7 +9,6 @@ import './Header.scss';
 
 const auth = getAuth();
 
-
 export default function Header() {
   this.elements = {
     wrapper: document.createElement('div'),
@@ -45,7 +44,7 @@ Header.prototype.renderLoggedIn = function (parent) {
   this.elements.map.textContent = 'Map';
   this.elements.map.dataset.route = ROUTES_NAMES.map;
 
-  this.elements.myPlaces.textContent = 'My places';
+  this.elements.myPlaces.textContent = 'Places';
   this.elements.myPlaces.dataset.route = ROUTES_NAMES.places;
 
   this.elements.wrapper.insertAdjacentHTML('afterbegin', IRON_LOGO);

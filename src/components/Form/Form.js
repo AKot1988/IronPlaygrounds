@@ -264,8 +264,6 @@ Form.prototype.markerDragged = function (longitude, latitude) {
 Form.prototype.getCardDataToSubmit = async function (formData) {
   let result = {};
   if (this.type === 'create') {
-    console.log(this.receivedCoord[0]);
-    debugger;
     result = {
       title: formData.get('title'),
       author: Router.user.uid,

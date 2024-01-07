@@ -63,7 +63,6 @@ Home.prototype.handleCarousel = function (collection) {
 
   if (!this.interval) {
     this.interval = setInterval(() => {
-      console.log(this.currentSlideIndex);
       if (
         collection.length === 1 ||
         this.currentSlideIndex >= collection.length - 1
@@ -83,7 +82,6 @@ Home.prototype.handleCarousel = function (collection) {
 };
 
 Home.prototype.unmount = function () {
-  console.log('Home.prototype.unmount has been called');
   clearInterval(this.interval);
   this.interval = null;
 };
