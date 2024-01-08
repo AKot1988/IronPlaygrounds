@@ -1,4 +1,11 @@
-import { doc, getDoc, getDocs } from 'firebase/firestore';
+import {
+  addDoc,
+  doc,
+  getDoc,
+  getDocs,
+  setDoc,
+  updateDoc,
+} from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {
   playgroundCollectionRef,
@@ -45,8 +52,29 @@ export const getAllPlaygroundsByUser = async () => {
 };
 
 export const getFavorites = async () => {
+  //необхідно взяти посилання на колекцію фейворітс і перевірити чи є у ньому документ з айдішніком користувача (який зараз залогінений)
+
+  //отримуємо докРеф (посилання на документ у колекції фейворітс), в незалежності від того чи є в ньому документ з айдішніком користувача
+  const userFavCollectionRef = doc(favoritesCollectionRef, Router.user.uid);
+  console.log(userFavCollectionRef);
+
+  //тепер необхідно отримати всі рефи, які е в колекції фейворітс (тобто всі документи, які є у колекції фейворітс)
+  const allFavDocsRefs = await getDocs(favoritesCollectionRef);
+  // проходимось по масиву докРефів форічом і перевіряємо чи є там докРеф з айдішніком користувача (ми його поклали в змінну userFavCollectionRef)
+  let userInFavorites = false;
+  allFavDocsRefs.forEach((docRef) => {
+    if (userFavCollectionRef.id === docRef.id) {
+      console.log('Юзер е в списку фейворітс');
+      userInFavorites = true;
+    }
+  });
+  if (!userInFavorites) {
+    await setDoc(userFavCollectionRef, { list: [] });
+  }
+
   //отримуємо докРеф (посилання на документ у колекції фейворітс)
   const docRef = doc(favoritesCollectionRef, Router.user.uid);
+  console.log(docRef);
   //отримуємо документСнепшот (на один конкретний документ)
   const res = await getDoc(docRef);
   // console.log(res);

@@ -6,7 +6,6 @@ import { IRON_LOGO } from '@/assets/images/svg/svg.js';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPS_ACCESS_TOKEN;
 
-// TODO: rename without "Create"
 export default function Map({
   longitude,
   latitude,
