@@ -56,7 +56,6 @@ export const getFavorites = async () => {
 
   //отримуємо докРеф (посилання на документ у колекції фейворітс), в незалежності від того чи є в ньому документ з айдішніком користувача
   const userFavCollectionRef = doc(favoritesCollectionRef, Router.user.uid);
-  console.log(userFavCollectionRef);
 
   //тепер необхідно отримати всі рефи, які е в колекції фейворітс (тобто всі документи, які є у колекції фейворітс)
   const allFavDocsRefs = await getDocs(favoritesCollectionRef);
@@ -64,7 +63,6 @@ export const getFavorites = async () => {
   let userInFavorites = false;
   allFavDocsRefs.forEach((docRef) => {
     if (userFavCollectionRef.id === docRef.id) {
-      console.log('Юзер е в списку фейворітс');
       userInFavorites = true;
     }
   });
@@ -74,7 +72,6 @@ export const getFavorites = async () => {
 
   //отримуємо докРеф (посилання на документ у колекції фейворітс)
   const docRef = doc(favoritesCollectionRef, Router.user.uid);
-  console.log(docRef);
   //отримуємо документСнепшот (на один конкретний документ)
   const res = await getDoc(docRef);
   // console.log(res);
