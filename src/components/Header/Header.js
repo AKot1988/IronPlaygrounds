@@ -13,6 +13,7 @@ export default function Header() {
   this.elements = {
     wrapper: document.createElement('div'),
     self: document.createElement('div'),
+    userPanel: document.createElement('div'),
     menu: document.createElement('div'),
     // --- LINKS ---
     home: document.createElement('a'),
@@ -32,6 +33,7 @@ Header.prototype.renderLoggedIn = function (parent) {
   this.elements.wrapper.innerHTML = '';
   this.elements.self.classList.add('header');
   this.elements.wrapper.classList.add('header__wrapper');
+  this.elements.userPanel.classList.add('header__user-panel');
   this.elements.menu.classList.add('header__menu__wrapper');
   this.elements.home.classList.add('header__home');
   this.elements.map.classList.add('header__map');
@@ -68,9 +70,11 @@ Header.prototype.renderLoggedIn = function (parent) {
   this.elements.button.changeOnClick(this.handleLogout);
   this.elements.button.changeText('Log Out');
 
-  this.elements.wrapper.append(this.elements.menu);
-  this.elements.button.render(this.elements.wrapper);
-  this.elements.wrapper.append(this.elements.userPhoto);
+  this.elements.userPanel.append(this.elements.menu, this.elements.userPhoto);
+
+  // this.elements.wrapper.append(this.elements.menu);
+  this.elements.button.render(this.elements.userPanel);
+  this.elements.wrapper.append(this.elements.userPanel);
 
   this.elements.self.append(this.elements.wrapper);
 

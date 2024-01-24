@@ -8,13 +8,19 @@
 
   &__wrapper {
     @include flex(center, space-between, row);
-    max-width: 1280px;
+    max-width: 980px;
     height: var(--header-height);
     margin: 0px auto;
     padding: 0px var(--padding-main);
     flex-wrap: wrap;
     gap: var(--gap-main);
     background-color: var(--basic-decore-color);
+  }
+
+  &__user-panel {
+    @include flex(center, center, row);
+    gap: 10px;
+    // align-self: flex-end;
   }
 
   &__menu__wrapper {
@@ -63,7 +69,7 @@
 }
 
 .logo {
-  width: 70px;
+  width: 50px;
   height: auto;
   fill: var(--secondary-decore-color);
 }

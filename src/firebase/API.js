@@ -59,8 +59,8 @@ export const getFavorites = async () => {
 
   //тепер необхідно отримати всі рефи, які е в колекції фейворітс (тобто всі документи, які є у колекції фейворітс)
   const allFavDocsRefs = await getDocs(favoritesCollectionRef);
-  // проходимось по масиву докРефів форічом і перевіряємо чи є там докРеф з айдішніком користувача (ми його поклали в змінну userFavCollectionRef)
   let userInFavorites = false;
+  // проходимось по масиву докРефів форічом і перевіряємо чи є там докРеф з айдішніком користувача (ми його поклали в змінну userFavCollectionRef)
   allFavDocsRefs.forEach((docRef) => {
     if (userFavCollectionRef.id === docRef.id) {
       userInFavorites = true;

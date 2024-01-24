@@ -58,6 +58,8 @@ body::-webkit-scrollbar-thumb {
 
 #pageContent {
   height: calc(100vh - var(--footer-height) - var(--header-height));
-  // background-image: url('@/assets/images/content_img/20230428_151154.JPG');
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
 }
