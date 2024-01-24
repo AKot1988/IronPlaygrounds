@@ -7,13 +7,13 @@
   max-width: 1280px;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 0 auto;
+  margin: 100px auto;
 
   &__card-wrapper,
   &__map-wrapper {
-    width: 40%;
+    width: 45%;
     height: 600px;
-    margin-top: 100px;
+    // margin-top: 100px;
     background-color: var(--basic-background-blur-color);
     padding: 10px;
 
@@ -33,5 +33,15 @@
   &__marker {
     width: 50px;
     height: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .map-page {
+    &__card-wrapper,
+    &__map-wrapper {
+      width: 90%;
+      height: 600px;
+    }
   }
 }

@@ -108,3 +108,19 @@
     color: var(--basic-text-color);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .hero-section {
+    @include flex(center, center, row);
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 10px;
+    // overflow-y: scroll;
+
+    &__description__wrapper,
+    &__carousel__wrapper {
+      max-width: 300px;
+      min-height: 300px;
+    }
+  }
+}
