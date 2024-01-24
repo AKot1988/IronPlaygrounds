@@ -5,9 +5,10 @@
 .map-page {
   @include flex(center, center, row);
   max-width: 1280px;
+  margin-top: 350px;
+  // height: 100%;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 100px auto;
 
   &__card-wrapper,
   &__map-wrapper {
@@ -38,10 +39,30 @@
 
 @media screen and (max-width: 600px) {
   .map-page {
+    // padding: 100px 0;
+    &__card-wrapper {
+      margin-top: 50px;
+    }
+    &__map-wrapper {
+      margin-bottom: 50px;
+    }
     &__card-wrapper,
     &__map-wrapper {
-      width: 90%;
-      height: 600px;
+      width: 75%;
+      height: 500px;
+
+      img {
+        height: 250px;
+      }
+
+      .iron-card {
+        overflow-y: hidden;
+        height: 500px;
+        &__description {
+          height: 250px;
+          overflow-y: scroll;
+        }
+      }
     }
   }
 }
