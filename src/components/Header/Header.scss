@@ -7,20 +7,17 @@
   background-color: var(--basic-decore-color);
 
   &__wrapper {
-    @include flex(center, space-between, row);
+    @include flex(center, space-evenly, row);
     max-width: 980px;
     height: var(--header-height);
     margin: 0px auto;
-    padding: 0px var(--padding-main);
+    padding: 0px 10px;
     flex-wrap: wrap;
-    gap: var(--gap-main);
     background-color: var(--basic-decore-color);
   }
 
   &__user-panel {
     @include flex(center, center, row);
-    gap: 10px;
-    // align-self: flex-end;
   }
 
   &__menu__wrapper {
@@ -34,9 +31,6 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      // position: relative;
-      // z-index: 2;
-      // box-shadow: 10px 15px 5px rgb(186, 186, 186);
       scale: 1.15;
     }
   }
@@ -72,4 +66,23 @@
   width: 50px;
   height: auto;
   fill: var(--secondary-decore-color);
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: var(--header-height-littleScreen);
+    &__wrapper {
+      height: var(--header-height-littleScreen);
+      @include flex(center, center, column);
+      gap: 10px;
+    }
+    &__user-panel {
+      @include flex(center, center, column);
+      gap: 10px;
+    }
+
+    svg {
+      display: none;
+    }
+  }
 }
