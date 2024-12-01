@@ -4,6 +4,7 @@
 
 .mapPage {
   @include flex(center, center, column);
+  flex-direction: column;
   width: 1280px;
   height: 100%;
   padding-top: 10px;
