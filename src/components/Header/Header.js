@@ -20,6 +20,7 @@ export default function Header() {
     map: document.createElement('a'),
     myPlaces: document.createElement('a'),
     // --- LINKS END ---
+    userAuthWrapper: document.createElement('div'),
     userPhoto: document.createElement('img'),
     button: new Button({
       text: 'Log in',
@@ -38,6 +39,7 @@ Header.prototype.renderLoggedIn = function (parent) {
   this.elements.home.classList.add('header__home');
   this.elements.map.classList.add('header__map');
   this.elements.myPlaces.classList.add('header__my-places');
+  this.elements.userAuthWrapper.classList.add('header__user-auth-wrapper');
   this.elements.userPhoto.classList.add('header__user-photo');
 
   this.elements.home.textContent = 'Home';
@@ -70,10 +72,12 @@ Header.prototype.renderLoggedIn = function (parent) {
   this.elements.button.changeOnClick(this.handleLogout);
   this.elements.button.changeText('Log Out');
 
-  this.elements.userPanel.append(this.elements.menu, this.elements.userPhoto);
+  this.elements.userAuthWrapper.append(this.elements.userPhoto);
+
+  this.elements.userPanel.append(this.elements.menu, this.elements.userAuthWrapper);
 
   // this.elements.wrapper.append(this.elements.menu);
-  this.elements.button.render(this.elements.userPanel);
+  this.elements.button.render(this.elements.userAuthWrapper);
   this.elements.wrapper.append(this.elements.userPanel);
 
   this.elements.self.append(this.elements.wrapper);

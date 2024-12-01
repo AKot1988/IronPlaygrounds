@@ -3,8 +3,9 @@
 @import '@/scss/fonts.scss';
 
 .mapPage {
-  @include flex(center, center, column);
+  @include flex(center, center, row);
   width: 1280px;
+  height: 100%;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0 auto;
@@ -12,6 +13,7 @@
   &__mapWrapper {
     width: 90%;
     height: 600px;
+    margin-bottom: 10px;
     margin-top: 30px;
     background-color: var(--basic-background-blur-color);
     box-shadow: 15px 15px 5px var(--shadow-color);

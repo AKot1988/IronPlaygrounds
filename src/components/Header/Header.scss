@@ -3,13 +3,12 @@
 @import '@/scss/fonts.scss';
 .header {
   width: 100vw;
-  height: var(--header-height);
+  // height: var(--header-height);
   background-color: var(--basic-decore-color);
 
   &__wrapper {
     @include flex(center, space-evenly, row);
     max-width: 980px;
-    height: var(--header-height);
     margin: 0px auto;
     padding: 0px 10px;
     flex-wrap: wrap;
@@ -70,14 +69,18 @@
 
 @media screen and (max-width: 600px) {
   .header {
-    height: var(--header-height-littleScreen);
+    padding: 10px 0;
     &__wrapper {
-      height: var(--header-height-littleScreen);
       @include flex(center, center, column);
       gap: 10px;
     }
     &__user-panel {
       @include flex(center, center, column);
+      gap: 10px;
+    }
+
+    &__user-auth-wrapper {
+      @include flex(center, center, row);
       gap: 10px;
     }
 
