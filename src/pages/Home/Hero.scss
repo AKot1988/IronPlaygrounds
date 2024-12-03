@@ -7,16 +7,18 @@
   flex-wrap: wrap;
   margin: auto;
   gap: 10px;
+  align-items: stretch;
   // overflow-y: scroll;
 
   &__description__wrapper,
   &__carousel__wrapper {
     @include flex(start, center, column);
+    flex: 1;
     margin: 20px;
     padding: 20px;
     // margin: 10px;
     max-width: 500px;
-    min-height: 600px;
+    // min-height: 600px;
     background-color: var(--basic-background-blur-color);
     border-radius: 10px;
   }

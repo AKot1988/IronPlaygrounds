@@ -3,6 +3,7 @@
 @import '@/scss/fonts.scss';
 .header {
   width: 100vw;
+  flex-shrink: 0;
   // height: var(--header-height);
   background-color: var(--basic-decore-color);
 
