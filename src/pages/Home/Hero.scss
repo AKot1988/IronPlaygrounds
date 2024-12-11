@@ -8,7 +8,6 @@
   margin: auto;
   gap: 10px;
   align-items: stretch;
-  // overflow-y: scroll;
 
   &__description__wrapper,
   &__carousel__wrapper {
@@ -46,7 +45,7 @@
 
 @media screen and (max-width: 600px) {
   .hero-section {
-    @include flex(center, center, row);
+    @include flex(center, center, column);
     flex-wrap: wrap;
     margin: auto;
     gap: 10px;
@@ -54,7 +53,7 @@
 
     &__description__wrapper,
     &__carousel__wrapper {
-      max-width: 300px;
+      min-width: 300px;
       min-height: 300px;
     }
   }

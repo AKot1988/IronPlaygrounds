@@ -54,6 +54,8 @@ Home.prototype.render = async function (parent) {
 };
 
 Home.prototype.handleCarousel = function (collection) {
+  const collectionRandomIndex = Math.floor(Math.random() * collection.length);
+  this.currentSlideIndex = collectionRandomIndex;
   const firstIronCard = new IronCard(collection[this.currentSlideIndex]);
 
   firstIronCard.renderHomePage(this.elements.carouselWrapper);
@@ -77,7 +79,7 @@ Home.prototype.handleCarousel = function (collection) {
       newIronCard.renderHomePage(this.elements.carouselWrapper);
       this.currentSlideIndex++;
       this.prevSlide = newIronCard;
-    }, 3000);
+    }, 5000);
   }
 };
 
