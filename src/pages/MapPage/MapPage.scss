@@ -5,13 +5,15 @@
 .mapPage {
   @include flex(center, center, column);
   width: 1280px;
+  height: 100%;
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px auto;
 
   &__mapWrapper {
+    flex-grow: 1;
     width: 90%;
-    height: 600px;
+    // height: 600px;
     background-color: var(--basic-background-blur-color);
     box-shadow: 15px 15px 5px var(--shadow-color);
     border-radius: 15px;
@@ -25,7 +27,7 @@
   }
 
   &__filter-container {
-    flex-shrink: 1;
+    flex-shrink: 0;
     @include flex(start, initial, column);
   }
 

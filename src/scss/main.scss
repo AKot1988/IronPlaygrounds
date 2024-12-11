@@ -4,7 +4,7 @@
 @import './common.scss';
 
 *::-webkit-scrollbar {
-  width: 0.5em;
+  width: 1em;
 }
 
 *::-webkit-scrollbar-track {
@@ -34,7 +34,7 @@
 }
 
 body::-webkit-scrollbar {
-  width: 0.45em;
+  width: 1em;
 }
 
 body::-webkit-scrollbar-track {
@@ -67,7 +67,6 @@ body::-webkit-scrollbar-thumb {
 #pageContent {
   flex-grow: 1;
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
