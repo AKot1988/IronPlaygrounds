@@ -3,10 +3,9 @@
 @import '@/scss/fonts.scss';
 
 .places {
+  @include flex(center, space-between, column);
   width: 100vw;
-  height: 60px;
-  height: calc(100vh - var(--footer-height) - var(--header-height));
-  // overflow-y: scroll;
+  height: 100%;
 
   &__options__wrapper {
     max-width: 1280px;
